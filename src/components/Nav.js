@@ -1,6 +1,8 @@
+import '../styles/Nav.css'
+
 function Nav() {
     return (
-        <nav>
+        <nav className = "Nav">
             <ul>
                 <li>Home</li>
                 <li>Projects</li>
