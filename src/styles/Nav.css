@@ -1,16 +1,48 @@
 .Nav {
     display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 100%;
+    width: 100vw;
+    height: 10vh;
 }
 
-.Nav ul{
-    list-style-type: none;
+/*
+.Nav div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+.Nav .Nav-logo {
+    display: grid;
+    grid-template-rows: 30px;
+    grid-template-columns: 112px;
+    justify-content: center;
+    align-content: center;
+}
+
+.Nav img {
+    width: 100%;
+}
+
+.Nav .Nav-options {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 250px;
+    justify-content: center;
+}
+
+.Nav ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 .Nav li{
-    text-align: center;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
