@@ -12,9 +12,11 @@ function Nav() {
             <div className="Nav-options">
                 <ul>
                     <li>Home</li>
-                    <li>Projects</li>
                     <li>About</li>
-                    <li>Contact</li>
+                    <li>Menu</li>
+                    <li>Reservations</li>
+                    <li>Order Online</li>
+                    <li>Login</li>
                 </ul>
             </div>
         </nav>
