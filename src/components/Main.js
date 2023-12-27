@@ -1,7 +1,8 @@
+import '../styles/Main.css'
+
 function Main() {
     return (
-        <main>
-            <h1>React Capstone Project</h1>
+        <main className = "Main">
         </main>
     )
 }

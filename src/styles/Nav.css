@@ -1,9 +1,12 @@
 .Nav {
+    z-index: 2;
+    position: fixed;
     display: grid;
     grid-template-columns: fit-content(100%) fit-content(100%);
     width: 100vw;
     height: fit-content(100%);
     justify-content: center;
+    background-color: #ffffff;
 }
 
 
