@@ -1,6 +1,3 @@
 .Main {
-    position: relative;
-    top: 30px;
-    height: 100vh;
-    background-color: #495e57;
+    height: fit-content(100%);
 }
