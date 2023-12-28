@@ -1,7 +1,7 @@
 
-import '../styles/Nav.css'
-import logo from '../assets/images/lemonlogovertical.svg';
-import hamburger_icon from '../assets/images/icon_hamburger_menu.svg';
+import './Nav.css'
+import logo from 'assets/images/lemonlogovertical.svg';
+import hamburger_icon from 'assets/images/icon_hamburger_menu.svg';
 
 
 function Nav() {

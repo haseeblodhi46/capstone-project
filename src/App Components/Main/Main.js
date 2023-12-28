@@ -1,5 +1,5 @@
-import '../styles/Main.css'
-import Hero from './Hero.js';
+import './Main.css'
+import Hero from './Hero/Hero.js';
 
 function Main() {
     return (
