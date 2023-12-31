@@ -1,4 +1,27 @@
 .Hero {
     height: 70vh;
+    display: grid;
+    grid-template-rows: repeat(4, fit-content(100%));
+    grid-template-columns: 90%;
     background-color:  #495e57;
 }
+
+.Hero * {
+    margin: 0;
+    padding: 0;
+}
+
+.Hero h1 {
+    font-family: 'Markazi Text', serif;
+    font-weight: 500;
+    font-size: 64px;
+}
+
+.Hero h2 {
+    font-family: 'Karla', sans-serif;
+}
+
+.Hero button {
+    width: 50%;
+}
+
