@@ -1,12 +1,4 @@
 .Highlights{
     height: 70vh;
     background-color:  #ffffff;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
-}
-
-.Highlights * {
-    margin: 0;
-    padding: 0;
-    background-color: red;
 }
