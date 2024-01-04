@@ -9,7 +9,7 @@ function Hero() {
             <h2>Chicago</h2>
             <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist</p>
             <button>Reserve a table</button>
-            <img src={resturant_food} alt='Restaurant Food'></img>
+            <img src={resturant_food}></img>
         </div>
     );
 }
