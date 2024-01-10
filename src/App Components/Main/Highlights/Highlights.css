@@ -1,4 +1,15 @@
 .Highlights{
-    height: 70vh;
+    display: grid;
+    height: 90vh;
+    grid-template-areas: "title" "card1" "button";
+    grid-template-rows: 100px fit-content(100%) fit-content(100%);
     background-color:  #ffffff;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
 }
+
+.Highlights h1{
+    margin: 0 0 0 0;
+}
+

@@ -1,9 +1,9 @@
 import './Button.css'
 
-function Button() {
+function Button(props) {
     return (
         <button className = "Button">
-            Reserve a table
+            {props.text}
         </button>
     );
 }

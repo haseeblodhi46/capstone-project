@@ -1,10 +1,13 @@
 import './Highlights.css'
-
+import Button from 'assets/reusable_components/Button/Button.js';
+import Card from 'assets/reusable_components/Card/Card.js';
 
 function Highlights() {
     return (
         <div className = "Highlights">
-
+            <h1>This Weeks Specials!</h1>
+            <Card/>
+            <Button text={'Online Menu'}/>
         </div>
     );
 }
