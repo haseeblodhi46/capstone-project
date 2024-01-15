@@ -2,7 +2,7 @@ import './Card.css'
 
 function Card(props) {
     return (
-        <div className = "Card">
+        <div className = "Card" id = {props.idname} >
         </div>
     );
 }

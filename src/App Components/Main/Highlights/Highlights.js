@@ -6,7 +6,9 @@ function Highlights() {
     return (
         <div className = "Highlights">
             <h1>This Weeks Specials!</h1>
-            <Card/>
+            <Card idname = "first"/>
+            <Card idname = "second"/>
+            <Card idname = "third"/>
             <Button text={'Online Menu'}/>
         </div>
     );
