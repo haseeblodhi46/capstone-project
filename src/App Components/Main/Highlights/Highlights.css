@@ -13,18 +13,40 @@
 
 .Highlights h1{
     margin: 0 0 0 0;
+    grid-area: title;
+}
+
+.Highlights #first{
+    grid-area: card1;
 }
 
 .Highlights #second{
+    grid-area: card2;
     display: none;
 }
 
 .Highlights #third{
+    grid-area: card3;
     display: none;
 }
 
 @media only screen and (min-width: 800px) {
 
+    .Highlights{
+        grid-template-areas: "title title title button button button" "card1 card1 card2 card2 card3 card3";
+        grid-template-rows: fit-content(100%) fit-content(100%);
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .Highlights #second{
+        grid-area: card2;
+        display: block;
+    }
+
+    .Highlights #third{
+        grid-area: card3;
+        display: block;
+    }
 
 
 }
