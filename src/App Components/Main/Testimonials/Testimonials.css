@@ -1,4 +1,18 @@
 .Testimonials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 70vh;
     background-color:  #495e57;
+}
+
+.Testimonials h1{
+    margin: 0 0 0 0;
+    align-self: center;
+    color: #ffffff;
+}
+
+.Testimonials .Testimonials-Container{
+    height: 300px;
+    width: 100vw;
 }
