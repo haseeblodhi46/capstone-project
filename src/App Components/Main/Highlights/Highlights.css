@@ -30,12 +30,16 @@
     display: none;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 950px) {
 
     .Highlights{
         grid-template-areas: "title title title button button button" "card1 card1 card2 card2 card3 card3";
         grid-template-rows: fit-content(100%) fit-content(100%);
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .Highlights #first {
+        justify-self: end;
     }
 
     .Highlights #second{
@@ -46,6 +50,7 @@
     .Highlights #third{
         grid-area: card3;
         display: block;
+        justify-self: start;
     }
 
 
