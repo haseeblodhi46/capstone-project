@@ -14,6 +14,10 @@
 .Highlights h1{
     margin: 0 0 0 0;
     grid-area: title;
+    font-family: 'Markazi Text', serif;
+    font-weight: medium;
+    font-size: 64px;
+    justify-self: end;
 }
 
 .Highlights #first{
@@ -30,7 +34,7 @@
     display: none;
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 1065px) {
 
     .Highlights{
         grid-template-areas: "title title title button button button" "card1 card1 card2 card2 card3 card3";
