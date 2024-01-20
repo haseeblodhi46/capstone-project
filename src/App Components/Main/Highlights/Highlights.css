@@ -13,11 +13,13 @@
 
 .Highlights h1{
     margin: 0 0 0 0;
+    padding: 0px 30px;
     grid-area: title;
     font-family: 'Markazi Text', serif;
     font-weight: medium;
     font-size: 64px;
     justify-self: end;
+    text-align: center;
 }
 
 .Highlights #first{
@@ -40,6 +42,10 @@
         grid-template-areas: "title title title button button button" "card1 card1 card2 card2 card3 card3";
         grid-template-rows: fit-content(100%) fit-content(100%);
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .Highlights h1{
+        padding: 0px 0px;
     }
 
     .Highlights #first {

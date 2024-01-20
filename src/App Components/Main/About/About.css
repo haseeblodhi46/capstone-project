@@ -1,4 +1,49 @@
 .About{
-    height: 70vh;
-    background-color:  #ffffff;
+    height: fit-content(100%);
+    padding: 50px 0px;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-areas: "title" "subtitle" "para" "image";
+    grid-template-rows: repeat(4, fit-content(100%));
+    grid-template-columns: 300px ;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.About * {
+    margin: 0;
+    padding: 0;
+}
+
+.About h1 {
+    grid-area: title;
+    font-family: 'Markazi Text', serif;
+    font-weight: 500;
+    font-size: 64px;
+    margin: 0 0 0 0;
+    color: #000000;
+}
+
+.About h2 {
+    grid-area: subtitle;
+    font-family: 'Markazi Text', serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #000000;
+}
+
+.About p {
+    grid-area: para;
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 25px 0;
+    width: fit-content(100%);
+    color: #000000;
+}
+
+.About img {
+    grid-area: image;
+    object-fit: cover;
+    justify-self: center;
 }
