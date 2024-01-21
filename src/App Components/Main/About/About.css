@@ -42,8 +42,21 @@
     color: #000000;
 }
 
-.About img {
+.About .image-div {
     grid-area: image;
+}
+
+.About .image-div * {
     object-fit: cover;
     justify-self: center;
+}
+
+@media only screen and (min-width: 770px) {
+
+    .About{
+        grid-template-areas:  "title image" "subtitle image" "para image";
+        grid-template-columns: 340px 280px;
+        grid-template-rows: repeat(2, fit-content(100%)) 300px;
+    }
+
 }
