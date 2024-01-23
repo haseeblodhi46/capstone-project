@@ -53,20 +53,51 @@
 }
 
 .About .image-div img:nth-child(2) {
-    position: absolute;
-    left: -150px;
-    top: 150px;
     object-fit: cover;
     justify-self: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .About .image-div * {
+        margin: 10px 0px;
+
+    }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1050px) {
+
+    .About{
+        height: fit-content(100%);
+        padding: 50px 0px;
+        background-color: #ffffff;
+        display: grid;
+        grid-template-areas: "title" "subtitle" "para" "image";
+        grid-template-rows: repeat(4, fit-content(100%));
+        grid-template-columns: 650px ;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    .About .image-div{
+        display: grid;
+        grid-template-columns: 300px 300px;
+        justify-content: space-between;
+    }
 
 }
 
-@media only screen and (min-width: 770px) {
+@media only screen and (min-width: 1050px) {
 
     .About{
         grid-template-areas:  "title image" "subtitle image" "para image";
         grid-template-columns: 340px 280px;
         grid-template-rows: repeat(2, fit-content(100%)) 300px;
+    }
+
+    .About .image-div img:nth-child(2) {
+        position: absolute;
+        left: -150px;
+        top: 150px;
     }
 
 }
