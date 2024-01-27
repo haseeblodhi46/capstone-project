@@ -1,6 +1,6 @@
 
 import './Nav.css'
-import logo from 'assets/images/lemonlogovertical.svg';
+import logo from 'assets/images/lemonlogohorizontal.svg';
 import hamburger_icon from 'assets/images/icon_hamburger_menu.svg';
 
 
