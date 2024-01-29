@@ -1,5 +1,6 @@
 
 import './Nav.css'
+import { Link } from 'react-router-dom';
 import logo from 'assets/images/lemonlogohorizontal.svg';
 import hamburger_icon from 'assets/images/icon_hamburger_menu.svg';
 
@@ -15,10 +16,10 @@ function Nav() {
             </div>
             <div className="Nav-options">
                 <ul>
-                    <li>Home</li>
+                    <li><Link to="/">Home</Link></li>
                     <li>About</li>
                     <li>Menu</li>
-                    <li>Reservations</li>
+                    <li><Link to="/reservation">Reservations</Link></li>
                     <li>Order Online</li>
                     <li>Login</li>
                 </ul>
