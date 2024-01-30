@@ -55,6 +55,11 @@
     display: none;
 }
 
+.Nav .link-style {
+    text-decoration: none;
+    color: #000000;
+}
+
 
 
 @media only screen and (max-width: 750px) {

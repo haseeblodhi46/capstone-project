@@ -4,7 +4,7 @@
     grid-template-areas: "title" "card1" "button";
     grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%);
     grid-gap : 20px;
-    padding: 25px 0px;
+    padding: 40px 0px;
     background-color:  #ffffff;
     justify-content: center;
     justify-items: center;

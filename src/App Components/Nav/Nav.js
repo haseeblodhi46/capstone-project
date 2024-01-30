@@ -16,10 +16,10 @@ function Nav() {
             </div>
             <div className="Nav-options">
                 <ul>
-                    <li><Link to="/">Home</Link></li>
+                    <li><Link className='link-style' to="/">Home</Link></li>
                     <li>About</li>
                     <li>Menu</li>
-                    <li><Link to="/reservation">Reservations</Link></li>
+                    <li><Link className='link-style' to="/reservation">Reservations</Link></li>
                     <li>Order Online</li>
                     <li>Login</li>
                 </ul>
