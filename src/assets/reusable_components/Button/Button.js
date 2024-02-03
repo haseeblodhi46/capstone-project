@@ -1,9 +1,10 @@
 import './Button.css'
+import { Link } from 'react-router-dom';
 
 function Button(props) {
     return (
         <button className = "Button">
-            {props.text}
+            <Link className='link-style' to="/reservation">{props.text}</Link>
         </button>
     );
 }
