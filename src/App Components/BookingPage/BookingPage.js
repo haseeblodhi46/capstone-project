@@ -1,8 +1,6 @@
 import './BookingPage.css'
+import BookingComponent from './BookingComponent/BookingComponent.js';
 import React, { useEffect, useState, useRef} from "react";
-
-
-
 
 
 function BookingPage() {
@@ -19,7 +17,8 @@ function BookingPage() {
     }
 
     return (
-        <div className = "Bookingpage" style = {res_style}>
+        <div className = "BookingPage" style = {res_style}>
+            <BookingComponent />
         </div>
     )
 }

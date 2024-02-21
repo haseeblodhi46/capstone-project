@@ -24,7 +24,7 @@ function Hero() {
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
             <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist</p>
-            <Button text={'Reserve a table'} linkto = {'/reservation'}/>
+            <Button text={'Reserve a table'} linkto = {'/BookingPage'}/>
             <img src={resturant_food}></img>
         </div>
     );
