@@ -1,3 +1,14 @@
 .BookingComponent {
     height: 50vh;
 }
+
+.BookingComponent .dateClass {
+    margin: 0;
+    padding: 0;
+}
+
+.BookingComponent .dateClass::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    background-color: green;
+}
+

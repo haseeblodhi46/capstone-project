@@ -1,0 +1,39 @@
+/* custom-datepicker.css */
+.react-datepicker {
+    font-family: Arial, sans-serif; /* Set your desired font family */
+  }
+  
+  /* Customize the background color of the datepicker */
+  .react-datepicker__month-container {
+    background-color: #333; /* Dark background color */
+  }
+  
+  /* Customize the font color of the datepicker */
+  .react-datepicker__day-name,
+  .react-datepicker__day {
+    color: #fff; /* White font color */
+  }
+  
+  /* Customize the background color of the selected date */
+  .react-datepicker__day--selected {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White font color */
+  }
+  
+  /* Customize the background color of the hovered date */
+  .react-datepicker__day--keyboard-selected,
+  .react-datepicker__day:hover {
+    background-color: #555; /* Darker background color */
+  }
+  
+  /* Customize the color of the datepicker navigation buttons */
+  .react-datepicker__navigation--previous,
+  .react-datepicker__navigation--next {
+    color: #fff; /* White font color */
+  }
+  
+  /* Customize the color of the selected date's border */
+  .react-datepicker__day--selected {
+    border-color: #007bff; /* Blue border color */
+  }
+  
