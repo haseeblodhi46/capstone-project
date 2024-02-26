@@ -9,21 +9,75 @@
     align-items: center;
 }
 
-
-.BookingComponent label{
+.BookingComponent form {
     display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 90%;
+}
+
+.BookingComponent label {
+    display: flex;
+    height: 10%;
     align-items: center;
-  }
+}
 
 .BookingComponent #res-time {
-    height: 60%;
+    height: 7%;
+    padding: 0px 30px;
+    border-width: 0.8px;
+    -webkit-appearance: none;
 }
 
 .BookingComponent #res-guests {
-    height: 50%;
-    padding: 0;
+    height: 7%;
+    padding: 0px 30px;
+    border-width: 0.8px;
+    border-style: solid;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+}
+
+.BookingComponent #res-guests::-webkit-outer-spin-button, #res-guests::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .BookingComponent #res-occasion {
-    height: 60%;
+    height: 7%;
+    padding: 0px 30px;
+    border-width: 0.8px;
+    -webkit-appearance: none;
 }
+
+.BookingComponent .react-datepicker-wrapper {
+    height: 7%;
+}
+
+.BookingComponent .react-datepicker__input-container {
+    height: 100%;
+}
+
+.BookingComponent .datepickerinput {
+      height: 100%;
+      width: 100%;
+      border-width: 0.8px;
+      box-sizing: border-box;
+      margin: 0px;
+      padding: 0px 30px;
+      border-style: solid;
+}
+
+.BookingComponent .submitButton {
+    align-self: center;
+    height: 7%;
+    width: 60%;
+    background-color: #9e4444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 20px 0px;
+}
+
+
+
