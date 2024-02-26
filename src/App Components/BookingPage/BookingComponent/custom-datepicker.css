@@ -1,39 +1,74 @@
-/* custom-datepicker.css */
-.react-datepicker {
-    font-family: Arial, sans-serif; /* Set your desired font family */
-  }
-  
+  /* custom-datepicker.css */
+  .BookingComponent .react-datepicker {
+      font-family: Arial, sans-serif; /* Set your desired font family */
+      background-color: white; /* Dark background color */
+    }
+
+  .BookingComponent .react-datepicker-popper {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      /*left: 50px !important;*/
+    }
+
+  .BookingComponent .react-datepicker__input-container {
+      height: 100%;
+    }
+
+    /* Customize the background color of the datepicker */
+  .BookingComponent .react-datepicker__month-container{
+      background-color: #333; /* Dark background color */
+      border: none;
+      border-radius: 10px 10px 0px 0px;
+    }
   /* Customize the background color of the datepicker */
-  .react-datepicker__month-container {
+ .BookingComponent .react-datepicker__month{
     background-color: #333; /* Dark background color */
+    border: none;
+    border-radius: 0px;
   }
-  
+
   /* Customize the font color of the datepicker */
-  .react-datepicker__day-name,
-  .react-datepicker__day {
+  .BookingComponent .react-datepicker__day-name{
+    color: black; /* White font color */
+  }
+  .BookingComponent .react-datepicker__day {
     color: #fff; /* White font color */
   }
-  
+
+  .BookingComponent .react-datepicker__day--outside-month {
+    color: #666; /* Light font color */
+  }
+
   /* Customize the background color of the selected date */
-  .react-datepicker__day--selected {
-    background-color: #007bff; /* Blue background color */
+  .BookingComponent .react-datepicker__day--selected {
+    background-color: #9e4444; /* Blue background color */
     color: #fff; /* White font color */
   }
-  
+
   /* Customize the background color of the hovered date */
-  .react-datepicker__day--keyboard-selected,
+  .BookingComponent .react-datepicker__day--keyboard-selected,
   .react-datepicker__day:hover {
-    background-color: #555; /* Darker background color */
+    background-color: #9e4444; /* Darker background color */
   }
-  
+
   /* Customize the color of the datepicker navigation buttons */
-  .react-datepicker__navigation--previous,
+  .BookingComponent .react-datepicker__navigation--previous,
   .react-datepicker__navigation--next {
     color: #fff; /* White font color */
   }
-  
+
   /* Customize the color of the selected date's border */
-  .react-datepicker__day--selected {
+  .BookingComponent .react-datepicker__day--selected {
     border-color: #007bff; /* Blue border color */
   }
-  
+
+  .BookingComponent .datepickerinput {
+      height: 100%;
+      width: 95%;
+      border: 10%;
+      padding: 0px 10px;
+      margin: 0px;
+    }
+
+  .BookingComponent .react-datepicker-wrapper {
+      height: 50%
+    }
