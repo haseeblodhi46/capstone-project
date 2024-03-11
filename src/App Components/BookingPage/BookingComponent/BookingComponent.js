@@ -32,7 +32,14 @@ function BookingComponent(props) {
         props.dispatch({type: 'AFTER_SUBMISSION', payload: timeValue});
     };
 
-
+const changeDateFormat = (date) => {
+    let newDate = new Date(date);
+    let year = newDate.getFullYear();
+    let month = newDate.getMonth() + 1;
+    let day = newDate.getDate();
+    let newDateFormat = year + '-' + month + '-' + day;
+    return newDateFormat;
+}
     return (
         <div className = "BookingComponent">
             <form onSubmit={handleSubmit}>
@@ -40,8 +47,10 @@ function BookingComponent(props) {
                 {/*<input  type="date" className="dateClass" id="res-date" name="res-date" value={dateValue} onChange={e => setDateValue(e.target.value)}></input>*/}
                 <DatePicker
                 selected={dateValue}
-                onChange={date => {setDateValue(date)
-                                   props.dispatch({type: 'DATE_SELECTION', payload: date})}}
+                onChange={date => { setDateValue(date);
+                                    console.log(date);
+                                    props.dispatch({type: 'DATE_SELECTION', payload: date});
+                                  }}
                 id='res-date'
                 popperPlacement='bottom'
                 placeholderText='Select Date'
