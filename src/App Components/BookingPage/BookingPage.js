@@ -16,10 +16,22 @@ function BookingPage() {
         top: navHeight+'px',
     }
 
+    const [dateValue, setDateValue] = useState(new Date());
+
+
+    useEffect(() => {
+        let date = dateValue.toISOString().split('T')[0];
+        fetchAPI(date).then((data) => {
+            console.log('API Data: ' + data);
+            dispatch({type: 'DATE_SELECTION', payload: data});
+        }).catch((error) => {
+            console.log('Error: ' + error);
+        });
+    }, [dateValue]);
+
+
     const initializeTimes = () => {
-        let times = [
-            '12:00', '12:30', '1:00', '1:30', '2:00', '2:30', '3:00', '3:30', '4:00', '4:30', '5:00', '5:30', '6:00', '6:30', '7:00', '7:30', '8:00', '8:30', '9:00', '9:30', '10:00', '10:30'
-        ];
+        let times = [];
         return times;
     }
 
@@ -29,7 +41,8 @@ function BookingPage() {
             return updatedTimes;
         }
         else if (action.type === 'DATE_SELECTION'){
-            return state;
+            console.log('Available Times: ' + action.payload);
+            return action.payload;
         }
     }
 
@@ -40,6 +53,8 @@ function BookingPage() {
             <BookingComponent
             availableTimes = {availableTimes}
             dispatch = {dispatch}
+            dateValue = {dateValue}
+            setDateValue = {setDateValue}
             />
         </div>
     )

@@ -14,42 +14,35 @@ function BookingComponent(props) {
         return(<option value = {X}>{X}</option>)
     }
 
-    const [dateValue, setDateValue] = useState(null);
-    const [timeValue, setTimeValue] = useState('12:00');
+
+    const [timeValue, setTimeValue] = useState(props.availableTimes[0]);
     const [guestsValue, setGuestsValue] = useState('1');
     const [occasionValue, setOccasionValue] = useState('Birthday');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Date: ' + dateValue);
+        console.log('Date: ' + props.dateValue);
         console.log('Time: ' + timeValue);
         console.log('Guests: ' + guestsValue);
         console.log('Occasion: ' + occasionValue);
-        setDateValue('');
-        setTimeValue('12:00');
+        props.dispatch({type: 'AFTER_SUBMISSION', payload: timeValue});
+        props.setDateValue(new Date());
+        setTimeValue(props.availableTimes[0]);
         setGuestsValue('1');
         setOccasionValue('Birthday');
-        props.dispatch({type: 'AFTER_SUBMISSION', payload: timeValue});
     };
 
-const changeDateFormat = (date) => {
-    let newDate = new Date(date);
-    let year = newDate.getFullYear();
-    let month = newDate.getMonth() + 1;
-    let day = newDate.getDate();
-    let newDateFormat = year + '-' + month + '-' + day;
-    return newDateFormat;
-}
+
+
     return (
         <div className = "BookingComponent">
             <form onSubmit={handleSubmit}>
                 <label htmlFor="res-date">Choose Date:</label>
                 {/*<input  type="date" className="dateClass" id="res-date" name="res-date" value={dateValue} onChange={e => setDateValue(e.target.value)}></input>*/}
                 <DatePicker
-                selected={dateValue}
-                onChange={date => { setDateValue(date);
+                selected={props.dateValue}
+                onChange={date => { props.setDateValue(date);
                                     console.log(date);
-                                    props.dispatch({type: 'DATE_SELECTION', payload: date});
                                   }}
                 id='res-date'
                 popperPlacement='bottom'
