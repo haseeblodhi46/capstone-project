@@ -21,11 +21,20 @@ function BookingPage() {
 
     useEffect(() => {
         let date = dateValue.toISOString().split('T')[0];
+
+          async function asyncCall() {
+            console.log('calling');
+            const result = await fetchAPI(date);
+            console.log(result);
+            return result;
+          }
+
+
         fetchAPI(date).then((data) => {
-            console.log('API Data: ' + data);
             dispatch({type: 'DATE_SELECTION', payload: data});
         }).catch((error) => {
             console.log('Error: ' + error);
+            dispatch({type: 'DATE_SELECTION', payload: []});
         });
     }, [dateValue]);
 
@@ -41,7 +50,6 @@ function BookingPage() {
             return updatedTimes;
         }
         else if (action.type === 'DATE_SELECTION'){
-            console.log('Available Times: ' + action.payload);
             return action.payload;
         }
     }

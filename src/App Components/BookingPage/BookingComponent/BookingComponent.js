@@ -26,11 +26,13 @@ function BookingComponent(props) {
         console.log('Guests: ' + guestsValue);
         console.log('Occasion: ' + occasionValue);
         props.dispatch({type: 'AFTER_SUBMISSION', payload: timeValue});
-        props.setDateValue(new Date());
-        setTimeValue(props.availableTimes[0]);
         setGuestsValue('1');
         setOccasionValue('Birthday');
     };
+
+    useEffect(() => {
+        setTimeValue(props.availableTimes[0]);
+    }, [props.availableTimes]);
 
 
 
@@ -41,9 +43,7 @@ function BookingComponent(props) {
                 {/*<input  type="date" className="dateClass" id="res-date" name="res-date" value={dateValue} onChange={e => setDateValue(e.target.value)}></input>*/}
                 <DatePicker
                 selected={props.dateValue}
-                onChange={date => { props.setDateValue(date);
-                                    console.log(date);
-                                  }}
+                onChange={date => { props.setDateValue(date);}}
                 id='res-date'
                 popperPlacement='bottom'
                 placeholderText='Select Date'
