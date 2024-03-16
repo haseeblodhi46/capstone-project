@@ -21,15 +21,6 @@ function BookingPage() {
 
     useEffect(() => {
         let date = dateValue.toISOString().split('T')[0];
-
-          async function asyncCall() {
-            console.log('calling');
-            const result = await fetchAPI(date);
-            console.log(result);
-            return result;
-          }
-
-
         fetchAPI(date).then((data) => {
             dispatch({type: 'DATE_SELECTION', payload: data});
         }).catch((error) => {
@@ -47,6 +38,7 @@ function BookingPage() {
     const updateAvailableTimes = (state, action) => {
         if (action.type === 'AFTER_SUBMISSION') {
             const updatedTimes = state.filter(time => time !== action.payload);
+            submitAPI({date: dateValue.toISOString().split('T')[0], time: action.payload});
             return updatedTimes;
         }
         else if (action.type === 'DATE_SELECTION'){
