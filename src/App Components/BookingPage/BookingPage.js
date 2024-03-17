@@ -2,6 +2,7 @@ import './BookingPage.css'
 import BookingComponent from './BookingComponent/BookingComponent.js';
 import React, { useEffect, useState, useRef, useReducer} from "react";
 import {fetchAPI, submitAPI} from 'assets/api_hooks/mockAPI.js'
+import { useNavigate } from 'react-router-dom';
 
 function BookingPage() {
 
@@ -17,7 +18,7 @@ function BookingPage() {
     }
 
     const [dateValue, setDateValue] = useState(new Date());
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         let date = dateValue.toISOString().split('T')[0];
@@ -37,8 +38,20 @@ function BookingPage() {
 
     const updateAvailableTimes = (state, action) => {
         if (action.type === 'AFTER_SUBMISSION') {
-            const updatedTimes = state.filter(time => time !== action.payload);
-            submitAPI({date: dateValue.toISOString().split('T')[0], time: action.payload});
+            submitAPI({date: dateValue.toISOString().split('T')[0], time: action.payload})
+            .then((responeback) => {
+                if(responeback){
+                    navigate('/ConfirmationPage');
+                }
+                let date = dateValue.toISOString().split('T')[0];
+                fetchAPI(date).then((data) => {
+                    dispatch({type: 'DATE_SELECTION', payload: data});
+                 }).catch((error) => {
+                    console.log('Error: ' + error);
+                    dispatch({type: 'DATE_SELECTION', payload: []});
+                });
+            });
+            const updatedTimes = [];
             return updatedTimes;
         }
         else if (action.type === 'DATE_SELECTION'){

@@ -18,6 +18,7 @@ function BookingComponent(props) {
     const [timeValue, setTimeValue] = useState(props.availableTimes[0]);
     const [guestsValue, setGuestsValue] = useState('1');
     const [occasionValue, setOccasionValue] = useState('Birthday');
+    const timeElement = useRef(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,10 +26,20 @@ function BookingComponent(props) {
         console.log('Time: ' + timeValue);
         console.log('Guests: ' + guestsValue);
         console.log('Occasion: ' + occasionValue);
+        if (timeValue == undefined || timeValue == '') {
+            console.log('Time is empty');
+            timeElement.current.style.border = '2px solid red';
+            return;
+        }
         props.dispatch({type: 'AFTER_SUBMISSION', payload: timeValue});
         setGuestsValue('1');
         setOccasionValue('Birthday');
     };
+
+    const handleDateChange = (date) => {
+        props.setDateValue(date);
+        timeElement.current.style.border = '1px solid black';
+    }
 
     useEffect(() => {
         setTimeValue(props.availableTimes[0]);
@@ -43,13 +54,13 @@ function BookingComponent(props) {
                 {/*<input  type="date" className="dateClass" id="res-date" name="res-date" value={dateValue} onChange={e => setDateValue(e.target.value)}></input>*/}
                 <DatePicker
                 selected={props.dateValue}
-                onChange={date => { props.setDateValue(date);}}
+                onChange={handleDateChange}
                 id='res-date'
                 popperPlacement='bottom'
                 placeholderText='Select Date'
                 className='datepickerinput'/>
                 <label htmlFor="res-time">Choose Time:</label>
-                <select id="res-time" name="res-time" value={timeValue} onChange={e => setTimeValue(e.target.value)}>
+                <select id="res-time" name="res-time" value={timeValue} ref={timeElement} onChange={e => setTimeValue(e.target.value)}>
                     {props.availableTimes.map(makeOption)}
                 </select>
                 <label htmlFor="res-guests">Number of guests:</label>
