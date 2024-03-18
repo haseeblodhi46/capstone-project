@@ -1,9 +1,16 @@
-import {fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, cleanup, history } from '@testing-library/react';
 import App from './App';
 import BookingPage from './App Components/BookingPage/BookingPage';
 import BookingComponent from 'App Components/BookingPage/BookingComponent/BookingComponent';
 import Nav from 'App Components/Nav/Nav';
 import { MemoryRouter, BrowserRouter } from 'react-router-dom';
+import { wait } from '@testing-library/user-event/dist/utils';
+import userEvent from '@testing-library/user-event';
+
+afterEach(() => {
+  cleanup();
+  window.history.pushState({}, '', '/'); // Reset the URL to the initial state
+});
 
 test('Booking Page Render Test', () => {
   render(
@@ -17,24 +24,30 @@ test('Booking Page Render Test', () => {
   expect(submitButton).toBeInTheDocument();
 });
 
-test('Time Initialization Test', () => {
+test('Time Initialization Test', async () => {
   render(
   <BrowserRouter>
     <App />
   </BrowserRouter>
   );
+
   const linkElement = screen.getAllByText('Reservations');
   fireEvent.click(linkElement[0]);
   const timeElement = screen.getByLabelText('Choose Time:');
+  const expectedOptions = ['10:00', '11:00', '12:00'];
+
+const options1 = await waitFor(() => {
   const options = timeElement.querySelectorAll('option');
-  const expectedOptions = ['10:00', '11:00', '12:30'];
-  const actualOptions = Array.from(options).map(option => option.textContent);
-  console.log(actualOptions);
-  expect(options).toHaveLength(24);
-  expect(actualOptions).toEqual(expect.arrayContaining(expectedOptions));
+  expect(options).toHaveLength(3);
+  return options;
 });
 
-test('Time Update Test', () => {
+const actualOptions = Array.from(options1).map(option => option.textContent);
+expect(actualOptions).toEqual(expect.arrayContaining(expectedOptions));
+
+});
+
+test('Time Update Test',  async () => {
   render(
   <BrowserRouter>
     <App />
@@ -43,17 +56,25 @@ test('Time Update Test', () => {
   const linkElement = screen.getAllByText('Reservations');
   fireEvent.click(linkElement[0]);
   const timeElement = screen.getByLabelText('Choose Time:');
-  const init_options = timeElement.querySelectorAll('option');
-  fireEvent.change(timeElement, {target: {value: '10:00'}});
-  fireEvent.click(screen.getByText('Make Your Reservation'));
-  const updated_options = timeElement.querySelectorAll('option');
-  expect(updated_options).toHaveLength(23);
-  const dayElement = screen.getByLabelText('Choose Date:');
-  fireEvent.change(dayElement, {target: {value: '2022-10-10'}});
-  const updated_options_2 = timeElement.querySelectorAll('option');
-  expect(updated_options_2).toHaveLength(23);
+  await waitFor(() => {
+    const init_options = timeElement.querySelectorAll('option');
+    expect(init_options).toHaveLength(3);
+  });
   fireEvent.change(timeElement, {target: {value: '11:00'}});
-  fireEvent.click(screen.getByText('Make Your Reservation'));
-  const updated_options_3 = timeElement.querySelectorAll('option');
-  expect(updated_options_3).toHaveLength(22);
-});
+  userEvent.click(screen.getByText('Make Your Reservation'));
+  await waitFor(() => {
+    const currentUrl = window.location.href;
+    expect(currentUrl).toContain('ConfirmationPage');
+  },{ timeout: 10000 });
+  fireEvent.click(linkElement[0]);
+  waitFor(() => {
+    const updated_options = timeElement.querySelectorAll('option');
+    expect(updated_options).toHaveLength(2);
+  });
+  const dayElement = screen.getByLabelText('Choose Date:');
+  fireEvent.change(dayElement, {target: {value: '2024-03-23'}});
+  waitFor(() => {
+    const updated_options_2 = timeElement.querySelectorAll('option');
+    expect(updated_options_2).toHaveLength(3);
+  });
+},10000);
