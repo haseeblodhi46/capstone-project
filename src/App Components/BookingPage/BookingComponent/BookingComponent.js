@@ -27,8 +27,8 @@ function BookingComponent(props) {
         console.log('Guests: ' + guestsValue);
         console.log('Occasion: ' + occasionValue);
         if (timeValue == undefined || timeValue == '') {
-            console.log('Time is empty');
             timeElement.current.style.border = '2px solid red';
+            alert('Time not selected');
             return;
         }
         props.dispatch({type: 'AFTER_SUBMISSION', payload: timeValue});
