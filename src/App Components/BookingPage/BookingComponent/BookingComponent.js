@@ -26,11 +26,6 @@ function BookingComponent(props) {
         console.log('Time: ' + timeValue);
         console.log('Guests: ' + guestsValue);
         console.log('Occasion: ' + occasionValue);
-        if (timeValue == undefined || timeValue == '') {
-            timeElement.current.style.border = '2px solid red';
-            alert('Time not selected');
-            return;
-        }
         props.dispatch({type: 'AFTER_SUBMISSION', payload: timeValue});
         setGuestsValue('1');
         setOccasionValue('Birthday');
@@ -60,7 +55,7 @@ function BookingComponent(props) {
                 placeholderText='Select Date'
                 className='datepickerinput'/>
                 <label htmlFor="res-time">Choose Time:</label>
-                <select id="res-time" name="res-time" value={timeValue} ref={timeElement} onChange={e => setTimeValue(e.target.value)}>
+                <select id="res-time" name="res-time" value={timeValue} ref={timeElement} onChange={e => setTimeValue(e.target.value)} required>
                     {props.availableTimes.map(makeOption)}
                 </select>
                 <label htmlFor="res-guests">Number of guests:</label>
