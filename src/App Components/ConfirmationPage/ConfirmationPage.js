@@ -7,7 +7,6 @@ function ConfirmationPage() {
     useEffect(() => {
         let nav = document.querySelector('.Nav');
         setNavHeight(nav.clientHeight);
-        console.log(navHeight);
     }, [navHeight]);
     const res_style = {
         position: 'relative',

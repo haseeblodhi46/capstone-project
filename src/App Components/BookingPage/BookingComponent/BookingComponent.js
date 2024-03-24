@@ -26,6 +26,10 @@ function BookingComponent(props) {
         console.log('Time: ' + timeValue);
         console.log('Guests: ' + guestsValue);
         console.log('Occasion: ' + occasionValue);
+        if (timeValue == '' || timeValue == null){
+            timeElement.current.style.border = '1px solid red';
+            return;
+        }
         props.dispatch({type: 'AFTER_SUBMISSION', payload: timeValue});
         setGuestsValue('1');
         setOccasionValue('Birthday');

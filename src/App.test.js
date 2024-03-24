@@ -67,14 +67,36 @@ test('Time Update Test',  async () => {
     expect(currentUrl).toContain('ConfirmationPage');
   },{ timeout: 10000 });
   fireEvent.click(linkElement[0]);
-  waitFor(() => {
-    const updated_options = timeElement.querySelectorAll('option');
+  const timeElement2 = screen.getByLabelText('Choose Time:');
+  await waitFor(() => {
+    const updated_options = timeElement2.querySelectorAll('option');
     expect(updated_options).toHaveLength(2);
-  });
+  }),{ timeout: 10000 };
   const dayElement = screen.getByLabelText('Choose Date:');
   fireEvent.change(dayElement, {target: {value: '2024-03-23'}});
-  waitFor(() => {
-    const updated_options_2 = timeElement.querySelectorAll('option');
+  await waitFor(() => {
+    const updated_options_2 = timeElement2.querySelectorAll('option');
     expect(updated_options_2).toHaveLength(3);
   });
 },10000);
+
+test('Time validation Test', async () => {
+  render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  );
+  const linkElement = screen.getAllByText('Reservations');
+  fireEvent.click(linkElement[0]);
+  await new Promise(resolve => setTimeout(resolve, 10000));
+  await waitFor(() => {
+  const timeElement = screen.getByLabelText('Choose Time:');
+  fireEvent.change(timeElement, {target: {value: '10:00'}});
+  });
+  userEvent.click(screen.getByText('Make Your Reservation'));
+  await waitFor(() => {
+    const confirmationElement = screen.getByText('Thank you for your reservation!');
+    expect(confirmationElement).toBeInTheDocument();
+  },{ timeout: 10000 });
+}
+,25000);
