@@ -6,6 +6,8 @@ import BookingPage from './App Components/BookingPage/BookingPage';
 import ConfirmationPage from './App Components/ConfirmationPage/ConfirmationPage';
 import Footer from './App Components/Footer/Footer';
 import { Routes, Route} from 'react-router-dom';
+import * as React from 'react';
+import { ChakraProvider } from '@chakra-ui/provider';
 
 function App() {
   return (
