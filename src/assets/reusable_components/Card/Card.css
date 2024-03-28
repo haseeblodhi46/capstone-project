@@ -1,4 +1,7 @@
 .Card{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 265px;
     height: 440px;
     background-color: #ffffff;
@@ -14,4 +17,22 @@
     object-fit: cover;
     margin: 0px;
     padding: 0px;
+}
+
+.Card h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+}
+
+.Card p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
 }

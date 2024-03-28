@@ -7,8 +7,7 @@ const About = () => {
         <div className = "About">
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
-            <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist and fellation wna what not for content, keeping adding lemons. 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat </p>
+            <p>We are a family-owned Mediterranean restaurant, dedicated to preserving time-honored recipes while infusing them with a contemporary flair. Our culinary journey takes you on a delightful exploration of rich flavors, vibrant spices, and fresh ingredients. Whether you're savoring our classic hummus, indulging in grilled kebabs, or relishing our flaky baklava. </p>
             <div className = "image-div">
                 <img src={resturant_chefB} height={270} width='100%'></img>
                 <img src={resturant_chefA} height={270} width='100%'></img>

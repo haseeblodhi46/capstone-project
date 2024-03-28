@@ -54,12 +54,12 @@
 
     .Highlights #second{
         grid-area: card2;
-        display: block;
+        display: flex;
     }
 
     .Highlights #third{
         grid-area: card3;
-        display: block;
+        display: flex;
         justify-self: start;
     }
 
