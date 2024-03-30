@@ -1,7 +1,33 @@
 .Card2{
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 200px;
     background-color: #f4ce14;
     border: none;
+    margin: 30px 30px;
+}
+
+.Card2 .image-description-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40%;
+    width: 100%;
+}
+
+.Card2 .image-description-container img{
+    height: 100%;
+    width: 45%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.Card2 .image-description-container p{
+    margin: 0;
+    padding: 0;
+    height: fit-content;
 }
