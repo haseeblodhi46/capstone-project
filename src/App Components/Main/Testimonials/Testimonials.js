@@ -9,9 +9,9 @@ const Testimonials = () => {
         <div className = "Testimonials">
             <h1>Testimonials</h1>
             <div className = "Testimonials-Container">
-                <Card2 idname = "first" image = {claire} name = {'Claire'}/>
-                <Card2 idname = "second" image = {jake} name = {'Jake'}/>
-                <Card2 idname = "third" image = {sherry} name = {'Sherry'}/>
+                <Card2 idname = "first" image = {claire} name = {'Claire'} review = {'" Brilliant food and vibrant place. "'}/>
+                <Card2 idname = "second" image = {jake} name = {'Jake'} review = {'" Exquisite cuisine and inviting ambiance. "'}/>
+                <Card2 idname = "third" image = {sherry} name = {'Sherry'} review = {'" Exceptional flavors and cozy setting. "'}/>
             </div>
         </div>
     );
